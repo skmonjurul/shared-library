@@ -25,6 +25,10 @@
             <optional>true</optional>
         </dependency>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.skmonjurul.shared-library</groupId>
             <artifactId>skmonjurul-web</artifactId>
             <optional>true</optional>
