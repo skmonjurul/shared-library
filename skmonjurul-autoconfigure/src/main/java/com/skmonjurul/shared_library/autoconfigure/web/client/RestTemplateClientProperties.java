@@ -64,9 +64,9 @@ public class RestTemplateClientProperties {
         
         /**
          * Max connections per route or host.
-         * Default value is 40.
+         * Default value is 10.
          */
-        private int maxConnections = 40;
+        private int maxConnections = 10;
         
         public int getMaxConnections() {
             return maxConnections;
@@ -83,7 +83,7 @@ public class RestTemplateClientProperties {
          * The connections are kept alive.
          * Default is 20 seconds.
          */
-        private int defaultTime = 20000; // 20 seconds
+        private int defaultTime = 60000; // 60 seconds
         
         public int getDefaultTime() {
             return defaultTime;
@@ -100,7 +100,7 @@ public class RestTemplateClientProperties {
          * Max time that is waited for a connection to be established.
          * Default value is 30 sec.
          */
-        private int connectionTimeout = 30000; // 30 sec, the time for waiting until a connection is established
+        private int connectionTimeout = 60000; // 60 sec, the time for waiting until a connection is established
         
         public int getConnectionTimeout() {
             return connectionTimeout;
@@ -116,7 +116,7 @@ public class RestTemplateClientProperties {
          * Max time that is waited until a connection from connection pool is available.
          * Default value is 30 sec.
          */
-        private int timeout = 30000; // 30 sec. The time for waiting for a connection from connection pool
+        private int timeout = 60000; // 60 sec. The time for waiting for a connection from connection pool
         
         public int getTimeout() {
             return timeout;
