@@ -1,1 +1,2 @@
 com.skmonjurul.shared_library.autoconfigure.web.client.RestTemplateAutoConfiguration
+com.skmonjurul.shared_library.autoconfigure.web.health.KeyCloakHealthContributorAutoConfiguration

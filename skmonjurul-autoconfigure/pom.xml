@@ -33,5 +33,14 @@
             <artifactId>skmonjurul-web</artifactId>
             <optional>true</optional>
         </dependency>
+
+<!--        Added this spring security oauth2 resource server dependency as it is required to build the project-->
+<!--        as com.skmonjurul.shared-library.autoconfigure.web.health.KeyCloakHealthContributorAutoConfiguration class has-->
+<!--        JwtAuthenticationProvider class as conditional on class.-->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-oauth2-resource-server</artifactId>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 </project>
