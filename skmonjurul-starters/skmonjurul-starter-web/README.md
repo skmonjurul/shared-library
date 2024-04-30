@@ -1,4 +1,4 @@
-# Custom Spring Boot Starter for service to service communication
+# Custom Spring Boot Starter for spring boot starter web
 
 ## How to use
 ### Add this starter as a dependency in your pom.xml file of your spring boot client application
@@ -11,26 +11,34 @@
 </dependency>
 ```
 
-### Inject `RestTemplateClient` as a bean
-```
+## Auto configuration
+* RestTemplate
+
+### RestTemplate
+Add this library to your spring boot application pom.xml file. This library will provide a `RestTemplate` bean with 
+some configuration. Once you add this library to your spring boot application, you can inject `RestTemplate` bean in your
+application.
+
+```java
 package com.skmonjurul.product_service.service;
 
 import com.skmonjurul.product_service.exception.ResourceNotFoundException;
 import com.skmonjurul.product_service.openapi.model.Product;
-import com.skmonjurul.shared_library.web.client.RestTemplateClient;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
+
 import java.util.List;
 import java.util.Map;
 
 
-@Service
+@Component
 public class FakeStoreProductService implements ProductService {
     
     private static final String URL = "https://fakestoreapi.com/products";
     
-    private final RestTemplateClient restTemplate;
+    private final RestTemplate restTemplate;
     
     public FakeStoreProductService(RestTemplateClient restTemplate) {
         this.restTemplate = restTemplate;
@@ -44,7 +52,7 @@ public class FakeStoreProductService implements ProductService {
 }
 ```
 
-### Below are the properties by which you can update the default value
+Below are some properties by which you can update the default configuration value
 ```
 skmonjurul.resttemplate.connection-pool.max-total-connections=50
 skmonjurul.resttemplate.route.max-connections=50
